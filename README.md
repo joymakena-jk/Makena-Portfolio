@@ -1,2 +1,2 @@
 # Makena-Portfolio
-Personal portfolio showcasing responsive front-end projects, modern UI design, and interactive web experiences built with HTML, CSS, and JavaScript.
+Welcome to my portfolio. This website showcases my journey as a front-end developer through a collection of carefully crafted projects, highlighting my skills in HTML, CSS, JavaScript, responsive design, UI/UX, and interactive web development. Every project reflects my passion for creating clean, modern, and engaging digital experiences.
