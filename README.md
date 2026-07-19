@@ -93,9 +93,6 @@ Building this portfolio strengthened my understanding of:
 
 **Makena**
 
-###  Live Portfolio
-
-https://joymakena-jk.github.io/Makena-Portfolio/
 
 ---
 
