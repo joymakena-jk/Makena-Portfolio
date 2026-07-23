@@ -4,38 +4,46 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kagwiria Makena — Front-End Developer</title>
-<meta name="description" content="Kagwiria Makena — front-end developer building responsive, brand-driven websites with HTML, CSS, and JavaScript.">
+<meta name="description" content="Kagwiria Makena — front-end developer crafting digital experiences that blend elegance, performance, and storytelling.">
 <meta property="og:title" content="Kagwiria Makena — Front-End Developer">
-<meta property="og:description" content="Five brands, five different worlds — a front-end developer portfolio.">
+<meta property="og:description" content="A front-end developer portfolio — five brands, five different worlds.">
 <meta property="og:type" content="website">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E %3Crect width='100' height='100' rx='20' fill='%230b0d12'/%3E %3Ctext x='50' y='66' font-family='monospace' font-size='42' font-weight='700' fill='%23c89b5c' text-anchor='middle'%3EKM%3C/text%3E %3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E %3Crect width='100' height='100' rx='24' fill='%230B0D12'/%3E %3Ctext x='50' y='66' font-family='Georgia,serif' font-size='44' font-weight='700' fill='%234F7CFF' text-anchor='middle'%3EK%3C/text%3E %3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.16.0/devicon.min.css">
 
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="noise-overlay" aria-hidden="true"></div>
-
 <div class="progress-bar" id="progressBar"></div>
+
+<!-- ambient background: grid lines + drifting glows, sits behind everything -->
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+<div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+<div class="bg-glow bg-glow-3" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+<div id="particles" class="particles" aria-hidden="true"></div>
 
 <!-- ================= NAV ================= -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#home" class="brand"><span class="brand-mark">&lt;KM/&gt;</span></a>
+    <a href="#home" class="brand"><span class="brand-mark">Kagwiria Makena</span></a>
 
     <ul class="nav-links" id="navLinks">
       <li><a href="#home" data-nav>Home</a></li>
       <li><a href="#about" data-nav>About</a></li>
-      <li><a href="#work" data-nav>Work</a></li>
+      <li><a href="#skills" data-nav>Skills</a></li>
+      <li><a href="#projects" data-nav>Projects</a></li>
       <li><a href="#contact" data-nav>Contact</a></li>
     </ul>
 
-    <a href="#contact" class="btn btn-small btn-primary nav-cta">Let's talk</a>
+    <a href="#contact" class="btn btn-small btn-primary nav-cta">Contact Me</a>
 
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
       <span></span><span></span><span></span>
@@ -47,35 +55,33 @@
 
 <!-- ================= HERO ================= -->
 <header class="hero" id="home">
-  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="container hero-inner">
 
-  <div class="hero-content">
-    <p class="eyebrow reveal">FRONT-END DEVELOPER &middot; NAIROBI, KENYA</p>
+    <div class="hero-content">
+      <p class="eyebrow reveal">FRONT-END DEVELOPER &middot; NAIROBI, KENYA</p>
 
-    <h1 class="hero-title reveal">
-      I build interfaces<br>
-      with <span class="text-accent">intention.</span>
-    </h1>
+      <h1 class="hero-title reveal">Hi, I'm Kagwiria.</h1>
 
-    <p class="hero-sub reveal">
-      I design and build responsive websites from scratch with HTML, CSS, and
-      JavaScript — matching the visual language to whatever world the brand
-      lives in, from five-star hotels to esports arenas.
-    </p>
+      <p class="hero-tagline reveal">
+        Crafting digital experiences that blend elegance, performance, and
+        storytelling.
+      </p>
 
-    <div class="hero-actions reveal">
-      <a href="#work" class="btn btn-primary">View Work</a>
-      <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      <p class="hero-stack reveal">
+        Front-End Developer &nbsp;&bull;&nbsp; HTML &nbsp;&bull;&nbsp; CSS
+        &nbsp;&bull;&nbsp; JavaScript &nbsp;&bull;&nbsp; Responsive Design
+      </p>
+
+      <div class="hero-actions reveal">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-ghost">Contact Me</a>
+      </div>
     </div>
 
-    <p class="hero-terminal reveal" aria-hidden="true">
-      <span class="terminal-prompt">&gt;</span> designing for:
-      <span id="typedWorlds"></span><span class="cursor-blink">_</span>
-    </p>
   </div>
 
   <div class="scroll-cue reveal" aria-hidden="true">
-    <span>SCROLL</span>
+    <span>Scroll</span>
     <div class="scroll-line"></div>
   </div>
 </header>
@@ -86,170 +92,245 @@
 
     <div class="about-text reveal">
       <p class="eyebrow">ABOUT</p>
-      <h2 class="section-title">Hi, I'm Kagwiria.</h2>
+      <h2 class="section-title">A bit about my approach.</h2>
       <p>
-        I'm a front-end developer based in Nairobi, building responsive
-        websites with HTML, CSS, and JavaScript. I like taking a brand's
-        world — its colors, its mood, what it's trying to say — and turning
-        that into a working site with real interactivity, not just a static
-        layout.
+        I'm a front-end developer who builds responsive websites from the
+        ground up using HTML, CSS, and JavaScript — no page builders, no
+        templates. I like matching a site's visual language to the brand
+        it's built for, so a luxury hotel doesn't feel like a gaming
+        platform, and a coffeehouse doesn't feel like an airline.
       </p>
       <p>
-        Every project on this page was built from scratch, without page
-        builders or templates. I care as much about the code being clean and
+        Every project on this page includes real interactivity — booking
+        flows, live search, dynamic content, form handling — not just a
+        static layout. I care as much about the code being clean and
         accessible as I do about the design looking intentional.
       </p>
     </div>
 
-    <div class="about-skills reveal">
-      <div class="skill-group">
-        <p class="skill-label">Languages</p>
-        <ul class="tag-list">
-          <li>HTML5</li><li>CSS3</li><li>JavaScript</li>
-        </ul>
+    <div class="about-highlights reveal">
+      <div class="highlight-card">
+        <span class="highlight-num">5</span>
+        <span class="highlight-label">Full site builds, from scratch</span>
       </div>
-      <div class="skill-group">
-        <p class="skill-label">Practices</p>
-        <ul class="tag-list">
-          <li>Responsive Design</li><li>Accessibility</li><li>Performance</li>
-        </ul>
+      <div class="highlight-card">
+        <span class="highlight-num">100%</span>
+        <span class="highlight-label">Hand-coded — no page builders</span>
       </div>
-      <div class="skill-group">
-        <p class="skill-label">Tools</p>
-        <ul class="tag-list">
-          <li>Git</li><li>GitHub Pages</li><li>VS Code</li>
-        </ul>
+      <div class="highlight-card">
+        <span class="highlight-num">3</span>
+        <span class="highlight-label">Languages: HTML, CSS, JavaScript</span>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- ================= WORK ================= -->
-<section class="section" id="work">
+<!-- ================= SKILLS ================= -->
+<section class="section skills-section" id="skills">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">SKILLS</p>
+      <h2 class="section-title">Tools I build with.</h2>
+    </div>
+
+    <div class="skills-grid reveal">
+
+      <div class="skill-card">
+        <i class="devicon-html5-plain colored skill-icon"></i>
+        <span>HTML</span>
+      </div>
+      <div class="skill-card">
+        <i class="devicon-css3-plain colored skill-icon"></i>
+        <span>CSS</span>
+      </div>
+      <div class="skill-card">
+        <i class="devicon-javascript-plain colored skill-icon"></i>
+        <span>JavaScript</span>
+      </div>
+      <div class="skill-card">
+        <i class="devicon-bootstrap-plain colored skill-icon"></i>
+        <span>Bootstrap</span>
+      </div>
+      <div class="skill-card">
+        <i class="devicon-git-plain colored skill-icon"></i>
+        <span>Git</span>
+      </div>
+      <div class="skill-card">
+        <i class="devicon-github-original colored skill-icon"></i>
+        <span>GitHub</span>
+      </div>
+      <div class="skill-card">
+        <svg class="skill-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="2" y="4" width="14" height="10" rx="1.4" stroke="currentColor" stroke-width="1.6"/>
+          <rect x="14" y="9" width="8" height="13" rx="1.4" stroke="currentColor" stroke-width="1.6"/>
+          <line x1="2" y1="16.5" x2="16" y2="16.5" stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+        <span>Responsive Design</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section class="section projects-section" id="projects">
   <div class="container">
     <div class="section-head reveal">
       <p class="eyebrow">FEATURED PROJECTS</p>
       <h2 class="section-title">Five brands, five different worlds.</h2>
       <p class="section-desc">
-        Each project below is a full build — structure, styling, and
-        interactivity — with its own visual identity. Hover a card to see it
-        shift into that brand's own colors.
+        Each project is a full build — structure, styling, and
+        interactivity — with its own visual identity.
       </p>
     </div>
 
-    <div class="work-grid">
+    <div class="project-list">
 
-      <article class="work-card reveal" style="--card-accent:#d4af37; --card-accent-2:#f2e6c9;">
-        <div class="work-card-top">
-          <span class="work-index">01</span>
-          <span class="work-tag">Hospitality</span>
+      <article class="project-row reveal" style="--proj-accent:#B8862F; --proj-accent-2:#f2e6c9;">
+        <div class="project-media">
+          <div class="project-shot">
+            <img src="images/aurora-grand.jpg" alt="Screenshot of the Aurora Grand website" class="project-shot-img" onload="this.nextElementSibling.style.display='none';" onerror="this.remove();">
+            <span class="project-shot-label">Aurora Grand</span>
+          </div>
         </div>
-        <h3>Aurora Grand</h3>
-        <p>A luxury hotel site with a full booking flow — room selection, date
-          validation, and a confirmation screen — plus an animated stats
-          section and a gallery lightbox.</p>
-        <ul class="work-stack">
-          <li>HTML</li><li>CSS</li><li>JavaScript</li>
-        </ul>
-        <a href="https://joymakena-jk.github.io/Aurora-Grand/" class="work-link" target="_blank" rel="noopener">
-          View live site <span aria-hidden="true">&#8599;</span>
-        </a>
+        <div class="project-info">
+          <span class="project-tag">Hospitality</span>
+          <h3>Aurora Grand</h3>
+          <p>A luxury hotel site with a full booking flow — room
+            selection, date validation, and a confirmation screen — plus
+            an animated stats section and a gallery lightbox.</p>
+          <ul class="project-stack">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li>
+          </ul>
+          <div class="project-actions">
+            <a href="https://github.com/joymakena-jk/Aurora-Grand" class="btn btn-ghost btn-small" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://joymakena-jk.github.io/Aurora-Grand/" class="btn btn-primary btn-small" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </div>
       </article>
 
-      <article class="work-card reveal" style="--card-accent:#00e5ff; --card-accent-2:#ff2d78;">
-        <div class="work-card-top">
-          <span class="work-index">02</span>
-          <span class="work-tag">Gaming</span>
+      <article class="project-row reverse reveal" style="--proj-accent:#2E4A6B; --proj-accent-2:#d4af37;">
+        <div class="project-media">
+          <div class="project-shot">
+            <img src="images/altiora-airlines.jpg" alt="Screenshot of the Altiora Airlines website" class="project-shot-img" onload="this.nextElementSibling.style.display='none';" onerror="this.remove();">
+            <span class="project-shot-label">Altiora Airlines</span>
+          </div>
         </div>
-        <h3>ShadowByte</h3>
-        <p>A data-driven gaming platform concept with live search, genre
-          filtering, favorites saved to local storage, and detail modals
-          rendered dynamically from a JS data set.</p>
-        <ul class="work-stack">
-          <li>HTML</li><li>CSS</li><li>JavaScript</li>
-        </ul>
-        <a href="https://joymakena-jk.github.io/ShadowByte/" class="work-link" target="_blank" rel="noopener">
-          View live site <span aria-hidden="true">&#8599;</span>
-        </a>
+        <div class="project-info">
+          <span class="project-tag">Aviation</span>
+          <h3>Altiora Airlines</h3>
+          <p>A premium airline site in navy and gold, covering cabin
+            classes, fleet, and destinations, with a responsive nav that
+            manages its own accessibility state.</p>
+          <ul class="project-stack">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li>
+          </ul>
+          <div class="project-actions">
+            <a href="https://github.com/joymakena-jk/Altiora-Airlines" class="btn btn-ghost btn-small" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://joymakena-jk.github.io/Altiora-Airlines/" class="btn btn-primary btn-small" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </div>
       </article>
 
-      <article class="work-card reveal" style="--card-accent:#16325c; --card-accent-2:#d4af37;">
-        <div class="work-card-top">
-          <span class="work-index">03</span>
-          <span class="work-tag">Aviation</span>
+      <article class="project-row reveal" style="--proj-accent:#A15C2A; --proj-accent-2:#f2e6c9;">
+        <div class="project-media">
+          <div class="project-shot">
+            <img src="images/noreli.png" alt="Screenshot of the Noreli Coffee website" class="project-shot-img" onload="this.nextElementSibling.style.display='none';" onerror="this.remove();">
+            <span class="project-shot-label">Noreli Coffee</span>
+          </div>
         </div>
-        <h3>Altiora Airlines</h3>
-        <p>A premium airline site in navy and gold, covering cabin classes,
-          fleet, and destinations, with a responsive nav that manages its own
-          accessibility state.</p>
-        <ul class="work-stack">
-          <li>HTML</li><li>CSS</li><li>JavaScript</li>
-        </ul>
-        <a href="https://joymakena-jk.github.io/Altiora-Airlines/" class="work-link" target="_blank" rel="noopener">
-          View live site <span aria-hidden="true">&#8599;</span>
-        </a>
+        <div class="project-info">
+          <span class="project-tag">Food &amp; Beverage</span>
+          <h3>Noreli Coffee</h3>
+          <p>A warm, editorial coffeehouse site with a live open/closed
+            status badge, animated stat counters, and a newsletter
+            signup — built with reduced-motion support throughout.</p>
+          <ul class="project-stack">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li>
+          </ul>
+          <div class="project-actions">
+            <a href="https://github.com/joymakena-jk/Noreli-Coffee" class="btn btn-ghost btn-small" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://joymakena-jk.github.io/Noreli-Coffee/" class="btn btn-primary btn-small" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </div>
       </article>
 
-      <article class="work-card reveal" style="--card-accent:#b9793b; --card-accent-2:#f2e6c9;">
-        <div class="work-card-top">
-          <span class="work-index">04</span>
-          <span class="work-tag">Food &amp; Beverage</span>
+      <article class="project-row reverse reveal" style="--proj-accent:#B0316E; --proj-accent-2:#00e5ff;">
+        <div class="project-media">
+          <div class="project-shot">
+            <img src="images/shadowbyte.jpeg" alt="Screenshot of the ShadowByte website" class="project-shot-img" onload="this.nextElementSibling.style.display='none';" onerror="this.remove();">
+            <span class="project-shot-label">ShadowByte</span>
+          </div>
         </div>
-        <h3>Noreli Coffee</h3>
-        <p>A warm, editorial coffeehouse site with a live open/closed status
-          badge, animated stat counters, and a newsletter signup — built with
-          reduced-motion support throughout.</p>
-        <ul class="work-stack">
-          <li>HTML</li><li>CSS</li><li>JavaScript</li>
-        </ul>
-        <a href="https://joymakena-jk.github.io/Noreli-Coffee/" class="work-link" target="_blank" rel="noopener">
-          View live site <span aria-hidden="true">&#8599;</span>
-        </a>
+        <div class="project-info">
+          <span class="project-tag">Gaming</span>
+          <h3>ShadowByte</h3>
+          <p>A data-driven gaming platform concept with live search, genre
+            filtering, favorites saved to local storage, and detail modals
+            rendered dynamically from a JS data set.</p>
+          <ul class="project-stack">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li>
+          </ul>
+          <div class="project-actions">
+            <a href="https://github.com/joymakena-jk/ShadowByte" class="btn btn-ghost btn-small" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://joymakena-jk.github.io/ShadowByte/" class="btn btn-primary btn-small" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </div>
       </article>
 
-      <article class="work-card reveal" style="--card-accent:#1e5eff; --card-accent-2:#4d7cff;">
-        <div class="work-card-top">
-          <span class="work-index">05</span>
-          <span class="work-tag">Automotive</span>
+      <article class="project-row reveal" style="--proj-accent:#2F5FB0; --proj-accent-2:#4d7cff;">
+        <div class="project-media">
+          <div class="project-shot">
+            <img src="images/refined-motion.jpg" alt="Screenshot of the Refined Motion website" class="project-shot-img" onload="this.nextElementSibling.style.display='none';" onerror="this.remove();">
+            <span class="project-shot-label">Refined Motion</span>
+          </div>
         </div>
-        <h3>Refined Motion</h3>
-        <p>An automotive concept site exploring premium branding, with an
-          auto-rotating featured-model showcase and a full gallery lightbox.
-          A design exercise, not a client build.</p>
-        <ul class="work-stack">
-          <li>HTML</li><li>CSS</li><li>JavaScript</li>
-        </ul>
-        <a href="https://joymakena-jk.github.io/Refined-Motion/" class="work-link" target="_blank" rel="noopener">
-          View live site <span aria-hidden="true">&#8599;</span>
-        </a>
+        <div class="project-info">
+          <span class="project-tag">Automotive</span>
+          <h3>Refined Motion</h3>
+          <p>An automotive concept site exploring premium branding, with
+            an auto-rotating featured-model showcase and a full gallery
+            lightbox. A design exercise, not a client build.</p>
+          <ul class="project-stack">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li>
+          </ul>
+          <div class="project-actions">
+            <a href="https://github.com/joymakena-jk/Refined-Motion" class="btn btn-ghost btn-small" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://joymakena-jk.github.io/Refined-Motion/" class="btn btn-primary btn-small" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-row reverse reveal project-soon">
+        <div class="project-media">
+          <div class="project-shot project-shot-soon">
+            <img src="images/zevonra-properties.jpg" alt="Zevonra Properties preview" class="project-shot-img" onload="this.nextElementSibling.style.display='none'; this.closest('.project-shot').classList.remove('project-shot-soon');" onerror="this.remove();">
+            <span class="project-shot-label">Zevonra Properties</span>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-tag project-tag-soon">Real Estate &middot; Coming Soon</span>
+          <h3>Zevonra Properties</h3>
+          <p>A real estate site currently in progress</p>
+        </div>
       </article>
 
     </div>
   </div>
 </section>
 
+
 <!-- ================= CONTACT ================= -->
 <section class="section contact-section" id="contact">
-  <div class="container contact-grid">
+  <div class="container contact-inner">
 
-    <div class="contact-info reveal">
-      <p class="eyebrow">GET IN TOUCH</p>
-      <h2 class="section-title">Have a project in mind?</h2>
-      <p class="section-desc">
-        Whether it's a landing page, a full site build, or fixing something
-        on an existing one — tell me a bit about it and I'll get back to you.
-      </p>
-
-      <div class="contact-detail">
-        <span class="contact-label">Email</span>
-        <a href="mailto:makenakagwiria2@gmail.com" id="emailLink">makenakagwiria2@gmail.com</a>
-      </div>
-
-      <div class="contact-socials">
-        <a href="https://github.com/joymakena-jk" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-      </div>
-    </div>
+    <p class="eyebrow reveal">GET IN TOUCH</p>
+    <h2 class="section-title reveal">Let's build something remarkable together.</h2>
+    <p class="section-desc reveal">
+      Whether it's a landing page, a full site build, or fixing something
+      on an existing one — tell me a bit about it and I'll get back to you.
+    </p>
 
     <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/mkodrqoq" method="POST">
       <div class="form-row">
@@ -269,6 +350,15 @@
       <p class="form-msg" id="formMsg" role="status"></p>
     </form>
 
+    <div class="contact-socials reveal">
+      <a href="mailto:makenakagwiria2@gmail.com" id="emailLink" aria-label="Email" class="social-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6.5C3 5.67 3.67 5 4.5 5h15c.83 0 1.5.67 1.5 1.5v11c0 .83-.67 1.5-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Z" stroke="currentColor" stroke-width="1.6"/><path d="m4 6.5 8 6.5 8-6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://github.com/joymakena-jk" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.15-1.11-1.46-1.11-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
   </div>
 </section>
 
@@ -277,7 +367,7 @@
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="container footer-inner">
-    <span class="brand-mark small">&lt;KM/&gt;</span>
+    <span class="brand-mark small">Kagwiria Makena</span>
     <p>&copy; 2026 Kagwiria Makena. All rights reserved.</p>
   </div>
 </footer>
